@@ -1,12 +1,12 @@
-function go()
-{
-
-if (document.formingreso.usuario.value=='Víctor' && document.formingreso.contraseña.value=='examen')
-    {
-        document.formingreso.submit();
+function validarUsuario () {
+let user = document.forms["formingreso"]["usuario"].value;
+let psw = document.forms["formingreso"]["contraseña"].value;
+    if (user == "victor" && psw == "examen"){
+        sessionStorage.setItem("IngresoCorrecto", "True") 
+        return true;
     }
-else
-    {
-        alert('Por favor, ingrese nombre de usuario y contraseña correctos.');
-    }
+    
+    sessionStorage.setItem("IngresoCorrecto", "False")
+    alert ("Usuario o contraseña incorrecta")
+    return false;
 }
